@@ -1,0 +1,43 @@
+<main class="">
+    <div class="container background-container">
+        <div class="principal">
+            <div class="location roboto-700">
+                <h1><%=data.name %>-<%=data.sys.country %></h1>
+            </div>
+    
+            <div class="degree">
+                <div class="img">
+                    <img src="images/sol-nuvem.svg">
+                </div>
+    
+                <div class="temperature roboto-400">
+                    <%=Math.round(data.main.temp) %>° <span>C</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="informations">
+            <div class="information roboto-400">
+                <p class="definition">Feels Like</p>
+                <p class="result"><%=Math.round(data.main.feels_like)%>°</p>
+            </div>
+            
+            <hr>
+
+            <div class="information roboto-400">
+                <p class="definition">Wind Speed</p>
+                <p class="result"><%=data.wind.speed%> m/s</p>
+            </div>
+
+            <hr>
+
+            <div class="information roboto-400">
+                <p class="definition">Humidity</p>
+                <p class="result"><%=data.main.humidity%>%</p>
+            </div>
+
+            
+        </div>
+    </div>
+
+</main>

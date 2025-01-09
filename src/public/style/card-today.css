@@ -1,0 +1,63 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 8rem;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.img {
+    width: 100px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.background-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+.degree {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    margin: 0;
+    padding: 0;
+}
+
+.temperature {
+    font-size: 4rem;
+}
+
+
+.information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.definition {
+    font-size: 0.8rem;
+}
+
+.result {
+    font-weight: bold;
+}
+
+hr {
+    margin: 0;
+}

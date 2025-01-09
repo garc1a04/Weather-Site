@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Weather site</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        
+        <!-- Styles-->
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/card-today.css">
+        <link rel="stylesheet" href="style/map.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
+    </head>
+    <body>
+        <section class="weather">
+            <div class="main-weather background-main-weather"> 
+                <div class="search-city">
+                    <div class="search roboto-400">
+                        <h1>Localization</h1>
+                        <div class="input">
+                            <form action="/submit" method="post">
+                                <input id="text" class="text" type="text" placeholder="City" name="city" required>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <div class="container-main">
+                    <div class="card-main">
+                        <% if(locals.data) { %>
+                            <%- include('card-today.ejs') %>
+                        <% } else { %>
+                            <main class="">
+                                <div class="container background-container">
+                                    <div class="principal">
+                                        <div class="location roboto-700">
+                                            <h1></h1>
+                                        </div>
+                                    <div>
+                                </div>
+                            </main>
+                        <% } %>
+
+
+                        <% if(locals.error) { %>
+                            <%- include('card-error.ejs') %>
+                        <% } %>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <div id="map"></div>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+        
+        <script type="module" src="script/map.js"></script>
+    </body>
+</html>
